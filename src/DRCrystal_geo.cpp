@@ -127,7 +127,7 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
         // relative to tower bottom
       double z_topl=z_bottoml + 2.*l_hzthick;
       double z_midl=z_bottoml + l_hzthick;
-      Position   l_pos(0.,0.,z_midl);      // Position of the layer.
+      Position   l_pos(hwidth,0.,z_midl);      // Position of the layer.
       std::cout<<" placed at z of "<<z_midl<<std::endl;
 
       dd4hep::Box l_box(hwidth,hwidth,l_hzthick);
@@ -150,7 +150,7 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
 	double z_mids2 = z_bottoms2+s_hzthick;
 	      
 
-	Position   s_pos(0.,0.,z_mids2);      // Position of the layer.
+	Position   s_pos(hwidth,0.,z_mids2);      // Position of the layer.
 	std::cout<<" placed at "<<z_mids2<<std::endl;
 	dd4hep::Box s_box(hwidth,hwidth,s_hzthick);
 
@@ -207,7 +207,7 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
   double mod_z_off= 0.;
 
 	  //double zrot=0.;
-  Transform3D tr(RotationZYX(0.,0.,0.));
+  Transform3D tr(RotationZYX(0.,M_PI/2.,0.));
   PlacedVolume pv = envelope.placeVolume(towerVol,tr);
   pv.addPhysVolID("system",det_id);
 

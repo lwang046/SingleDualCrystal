@@ -14,7 +14,7 @@
 
 # Specify view angle:
 # from above
-#/vis/viewer/set/upVector 0 0 1
+/vis/viewer/set/upVector 0 0 1
 #/vis/viewer/set/viewpointThetaPhi 90 90 deg
 #from the front
 #/vis/viewer/set/upVector 0 1 0
@@ -23,9 +23,9 @@
 #/vis/viewer/set/upVector 0 1 0
 #/vis/viewer/set/viewpointThetaPhi 0 0 deg 
 # from the side
-/vis/viewer/set/upVector 0 1 0
-/vis/viewer/set/viewpointThetaPhi 270 0 deg 
-
+#/vis/viewer/set/upVector 0 1 0
+#/vis/viewer/set/viewpointThetaPhi 270 0 deg 
+/vis/viewer/set/viewpointThetaPhi 90 270 deg 
 
 # Specify zoom value:
 #/vis/viewer/zoomTo 35
@@ -40,8 +40,8 @@
 /vis/viewer/set/background white
 
 # Draw coordinate axes:
-#/vis/scene/add/axes 0 0 0 10 cm
-/vis/scene/add/axes 0 0 0
+/vis/scene/add/axes 0 0 0 10 cm
+#/vis/scene/add/axes 0 0 0
 
 
 # Draw smooth trajectories at end of event, showing trajectory points
@@ -61,9 +61,10 @@
 #/vis/filtering/trajectories/particleFilter-0/add pi-
 /vis/filtering/trajectories/particleFilter-0/add e-
 /vis/filtering/trajectories/particleFilter-0/add e+
-/vis/filtering/trajectories/particleFilter-0/add opticalphoton
+#/vis/filtering/trajectories/particleFilter-0/add opticalphoton
 /vis/filtering/trajectories/particleFilter-0/add mu-
-/vis/filtering/trajectories/particleFilter-0/add gamma
+/vis/filtering/trajectories/particleFilter-0/add mu+
+#/vis/filtering/trajectories/particleFilter-0/add gamma
 
 #
 # To invert the above, drawing all particles except gammas,
